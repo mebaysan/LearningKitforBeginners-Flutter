@@ -7,7 +7,7 @@
       
         {
             "name": "Dart",
-            "program": "2-Dart_OOP/1-Classes.dart",
+            "program": "3-Dart_Hata_Yonetimi/5-SuperKeyWord.dart",
             "request": "launch",
             "type": "dart"
         }
