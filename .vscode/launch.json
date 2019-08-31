@@ -7,7 +7,7 @@
       
         {
             "name": "Dart",
-            "program": "3-Dart_Hata_Yonetimi/5-SuperKeyWord.dart",
+            "program": "3-Dart_Hata_Yonetimi/1-HataYakalamak.dart",
             "request": "launch",
             "type": "dart"
         }
