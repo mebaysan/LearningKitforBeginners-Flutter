@@ -1,7 +1,0 @@
-pubspec.yaml -> bu dosya bizim package.json'ımız gibidir. 
-paket yönetimini vs. burada yaparız.
-
-dependincies altına bunları ekliyoruz
-sqflite: any -> veritabanı bağlantısı için gerekli provider
-path_provider : any -> bizim veri tabanının fiziksel yolunu rahatça bulmamızı sağlayan provider
-intl: ^0.15.7  -> globalleşme için kullanılır. Örnek : tarih saat formatı kullanıcı neredeyse ona göre ayarlanır
