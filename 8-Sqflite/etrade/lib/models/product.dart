@@ -51,9 +51,9 @@ class Product {
   Product.fromObject(dynamic o) {
     // parametre olarak dynamic bir parametre alır
     // mesela product diye tanımlanmamış ama elimizdeki json objesi bizim product nesnemizin yapısına uygun o zaman bu objeyi Product nesnesine çevirir
-    this._id = o["id"];
-    this._name = o["name"];
-    this._price = o["price"];
-    this._description = o["description"];
+    this._id = o["Id"];
+    this._name = o["Name"];
+    this._price = double.tryParse(o["Price"].toString());
+    this._description = o["Description"];
   }
 }
