@@ -1,3 +1,6 @@
+import 'dart:math';
+import 'dart:async';
+
 main(List<String> args) {
   // Ternary
   bool boolean = false;
@@ -33,7 +36,7 @@ main(List<String> args) {
   tokalas("Enes", lakap: "Adam", soyad: "Baysan");
   tokalas("Enes");
 
-  // -----------------Method Parametreler----------------
+  // -----------------Method Parametreler 2----------------
 
   // SET'ler
   // setler içindeki elemanlar unique'dir. 1 elemandan bir tane daha olamaz
@@ -75,4 +78,47 @@ main(List<String> args) {
 
   getMyFirstName();
   //----------------------Lexical Closure--------------------
+
+// List.generate ve List.map
+  //List<int> ogrenciNumaralari = List.generate(30, (index) => index);
+  int rastgeleOlustur() {
+    int olusanSayi = Random().nextInt(30);
+    if (olusanSayi != 0)
+      return olusanSayi;
+    else
+      return rastgeleOlustur();
+  }
+
+  List<int> ogrenciNumaralari = List.generate(
+      30,
+      (index) =>
+          rastgeleOlustur()); // ilk parametre eleman sayısı eleman değerleri(sırasıyla)
+  ogrenciNumaralari.forEach((index) => print("Öğrenci numarası = $index"));
+  List<Ogrenci> tumOgrenciler = ogrenciNumaralari.map((ogrNo) {
+    return Ogrenci("Ogrenci Adı $ogrNo ", ogrNo);
+  }).toList();
+  tumOgrenciler.forEach((ogrenci) => print("Oğrenci adı " + ogrenci.ad));
+//---------------------------------List.generate ve List.map------------------------------------
+
+//Asenkron İşlemler
+  Future<String> dosyaIndir() {
+    print("Dosya indirme işlemi başladı");
+    Future<String> sonuc =
+        Future.delayed(Duration(seconds: 10), () => "indirilen dosya içeriği");
+    print("Dosya indirme işlemi bitti");
+  }
+  dosyaIcerikGoster() async {
+    print("Dosya içeriği gösterilecek");
+    String dosyaIcerigi = await dosyaIndir();
+    print("DOSYA İÇERİĞİ = $dosyaIcerigi");
+  }
+  dosyaIcerikGoster();
+//-------------------------------------Asenkron İşlemler---------------------------------------
+}
+
+class Ogrenci {
+  String ad;
+  int no;
+  Ogrenci(this.ad,
+      this.no); // constructor. gelen parametreler sırasıyla ad ve no olacak sende bunları bu nesneye ata dedik
 }
